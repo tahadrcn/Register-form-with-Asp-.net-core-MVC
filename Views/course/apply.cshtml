@@ -1,0 +1,55 @@
+
+@model StudentsResponse
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>web sayfam</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>apply</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+  </head>
+  <body>
+    <div class="container m-4">
+        <div class="card mx-auto" style="width=500px;" >
+          <div class="card-header">
+           <h2>Başvuru Formu</h2> 
+          </div>
+          <div class="card-body">
+            <form asp-action="apply" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+            <label asp-for="name">Adınız:</label>
+            <input asp-for="name" class="form-control">
+            </div>
+            <div class="form-group">
+            <label asp-for="email">mail:</label>
+            <input asp-for="email" class="form-control">
+            </div>
+            <div class="form-group">
+            <label asp-for="phone">Tel no:</label>
+            <input asp-for="phone" class="form-control">
+            </div>
+            <div class="form-group">
+            <label asp-for="confirm">Kursa katılacak mısınız?</label>
+            <select asp-for="confirm" class="form-control">
+                <option value="null">Seçiniz</option>
+                <option value="true">Katılacağım</option>
+                <option value="false">Katılmayacağım</option>
+            </select>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+       
+</body>
+</html>

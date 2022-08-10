@@ -1,0 +1,38 @@
+@model CourseStudentViewModel
+@{
+  var classname=Model.Students.Count > 2 ? "popular": null ;
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>web sayfam</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .popular{
+      color: green;
+      font-weight: 200px;
+    }
+  </style>
+  <body>
+    <h2 class="@classname">@Model.Course.name</h2>
+    @if (@Model.Students.Count==0)
+    {
+      <text>Katılımcı yoktur.</text>
+    }
+    else{
+      <ul> 
+      @foreach (var item in Model.Students)
+      {
+       <li>
+         @item.names
+         </li>
+      }
+    </ul>
+    }
+    
+  </body>
+</html>

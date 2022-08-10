@@ -1,0 +1,46 @@
+@model StudentsResponse
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>web sayfam</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanks</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+  </head>
+  <body>
+        <div class="container m-4">
+            <div class="card mx-auto" style="width=500px;" >
+                <div class="card-header"> 
+                     <h2>Merhaba @Model.name,</h2>  
+                </div>
+                <div class="card-body">
+                   @if(Model.confirm==true){
+                    <div>
+                        <h3> Katıldığnız için teşekkürler..</h3>
+                        <p>
+                         Diğer katılımcları görüntülemek için<a asp-action="List"> tıklayınız.</a>
+                        </p>
+                    </div>
+                    }
+                    else
+                    {
+                    <div>
+                        <p>
+                        Üzgünüz,Umarım fikriniz değişir.
+                        </p>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+   
+
+
+     
+      
+     
+</body>
+</html>
